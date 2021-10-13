@@ -1,0 +1,72 @@
+CREATE TABLE Druh
+(
+    id_druh int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nazev_druh char(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE Vyrobce
+(
+    id_vyrobce int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nazev_vyrobce char(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE Slevove_kody
+(
+    id_sleva int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    nazev_kod char(10) NOT NULL UNIQUE,
+    hodnota_kod int NOT NULL
+);
+
+CREATE TABLE Uzivatel
+(
+    id_uzivatel int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    bAdmin BOOLEAN NOT NULL DEFAULT false,
+    uzivatel_jmeno char(50) NOT NULL UNIQUE,
+    uzivatel_email char(70) NOT NULL UNIQUE,
+    uzivatel_heslo char(50) NOT NULL,
+    uzivatel_kod char(50) NOT NULL,
+    uzivatel_verified BOOLEAN NOT NULL DEFAULT false
+);
+
+CREATE TABLE Produkty
+(
+    id_produkty int AUTO_INCREMENT NOT NULL  PRIMARY KEY,
+    nazev_produkt char(70) NOT NULL,
+    cena_produkt int NOT NULL,
+    id_vyrobce int NOT NULL,
+    img_produkt char(35) NOT NULL,
+    id_druh int NOT NULL,
+    FOREIGN KEY (id_vyrobce) REFERENCES Vyrobce(id_vyrobce) ON DELETE CASCADE,
+    FOREIGN KEY (id_druh) REFERENCES Druh(id_druh) ON DELETE CASCADE
+);
+
+
+
+INSERT INTO `Vyrobce` (`id_vyrobce`, `nazev_vyrobce`) VALUES 
+('1', 'Asus'), 
+('2', 'Msi'),
+('3', 'Gigabyte'), 
+('4', 'Samsung'), 
+('5', 'Sony'),
+('6', 'Amd'), 
+('7', 'Intel'),
+('8', 'Apple');
+
+
+INSERT INTO `Druh` (`id_druh`, `nazev_druh`) VALUES 
+	('1', 'Mobily'), 
+	('2', 'Grafické karty'),
+	('3', 'Procesory'), 
+	('4', 'Televize'), 
+	('5', 'Monitory');
+
+INSERT INTO `Produkty` (`id_produkty`, `nazev_produkt`, `cena_produkt`, `img_produkt`, `id_vyrobce`, `id_druh`) VALUES 
+	('1', 'GIGABYTE AORUS Radeon RX 6800 XT MASTER TYPE C 16G', '59999', '1.png', '3', '2'), 
+	('2', 'iPhone 12 64GB černá', '24999', '2.png', '8', '1'),
+	('3', 'AMD Ryzen 5 5600X', '8999', '3.png', '6', '3'),
+	('4', 'Intel Core i7-10700K', '9999', '4.png', '7', '3'),
+	('5', '27" GIGABYTE M27Q', '10999', '5.png', '3', '5'),
+	('6', '55'' Sony Bravia OLED KD-55A8', '34999', '6.png', '5', '4'),
+	('7', '65" Samsung QE65Q80T', '29999', '7.png', '4', '4'),
+	('8', 'MSI GeForce RTX 3080 GAMING X TRIO 10G', '38999', '8.png', '2', '2'),
+	('9', 'ASUS ROG STRIX GeForce RTX 3090 GAMING O24G', '58999', '9.png', '1', '2');

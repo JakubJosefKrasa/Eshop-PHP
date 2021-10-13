@@ -1,0 +1,556 @@
+:root {
+    --main-bg-color: #28385e;
+    --secondary-bg-color: #3c4f75;
+    --text-color: #516c8d;
+    --text-color2: #dddddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    min-height: 100vh;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 7rem;
+}
+
+.top-header h1 a {
+    color: var(--text-color2);
+}
+
+.logo {
+    line-height: 2rem;
+    text-transform: uppercase;
+}
+
+.search form {
+    display: flex;
+}
+
+.search input:focus {
+    outline: none;
+}
+
+.search input, .search button {
+    height: 2.5rem;
+    width: 3rem;
+}
+
+.search button {
+    border-radius: 0 0.3rem 0.3rem 0;
+    background-color: var(--secondary-bg-color);
+    border: none;
+    border-left: 1px solid var(--text-color2);
+    cursor: pointer;
+}
+
+.search button i {
+    color: var(--text-color2);
+}
+
+.search button:hover {
+    background-color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.search input {
+    all: unset;
+    width: 16rem !important;
+    padding: 0rem 0.55rem;
+    color: var(--text-color2);
+    background-color: var(--secondary-bg-color);
+    border-radius: 0.3rem 0 0 0.3rem;
+}
+
+.search input::placeholder {
+    color: var(--text-color2);
+}
+
+.right-menu {
+    display: flex;
+    align-items: center;
+}
+
+.right-menu a, .top-header a {
+    text-decoration: none;
+}
+
+.kosik-outer {
+    background-color: var(--secondary-bg-color);
+    border-radius: 0.25rem;
+    padding: 0.8rem;
+}
+
+.kosik-outer a {
+    color: var(--text-color2);
+}
+
+.right-menu .kosik {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.right-menu .kosik .kosik-pocet {
+    position: absolute;    
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    top: 1.2rem;
+    left: 1.2rem;
+    color: var(--text-color2);
+    font-size: 0.80rem;
+    width: 1rem;
+    padding: 0.1rem 0.5rem;
+    font-weight: 500;
+    background-color: var(--text-color);
+    border-radius: 100%;
+}
+
+.right-menu .kosik .kosik-cena {
+    margin-left: 1.4rem;
+}
+
+.right-menu .login {
+    margin-left: 1.3rem;
+}
+
+.right-menu .login a {
+    color: var(--text-color2);
+}
+
+.right-menu .login .login-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+.right-menu .login .login-inner a {
+    margin-left: 0.5rem;
+    color: var(--text-color2);
+}
+
+.right-menu .login .login-inner h3 a::after, .right-menu .login a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: var(--text-color2);
+    transition: width 0.3s ease-in-out;
+}
+
+.right-menu .login .login-inner h3 a:hover::after, .right-menu .login a:hover::after {
+    width: 100%;
+    transition: width 0.3s ease-in-out;
+}
+
+nav .nav-bar .nav-typ a {
+    text-decoration: none;
+    color: var(--text-color2);
+}
+
+nav .nav-bar .nav-typ {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    padding: 1rem 0;
+    background-color: var(--secondary-bg-color);
+}
+
+.nav-bar .nav-typ .hover-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: var(--text-color2);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-bar .nav-typ .hover-link:hover::after {
+    width: 100%;
+    transition: width 0.3s ease-in-out;
+}   
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 7rem auto;
+}
+
+.login-form input::placeholder {
+    color: var(--text-color2);
+}
+
+.login-form input, .login-form button, .login-form a, .login-form select {
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    border: none;
+    outline: none;
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color2);
+}
+
+.login-form label {
+    color: var(--text-color2);
+    margin: 0.3rem;
+}
+
+.login-form a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+} 
+
+.login-form input:focus {
+    outline: none;
+}
+
+.login-form .button:hover {
+    background-color: var(--text-color);
+    transition: 0.3s all ease-in-out;
+    cursor: pointer;
+}
+
+.login-form .error {
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.item-container {
+    margin: 5rem 4rem;
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.item {
+    margin-bottom: 3rem;
+    flex: 0 0 21%;
+    padding: 0.8rem 1rem;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid var(--text-color);
+    border-radius: 0.25rem;
+    background-color: var(--secondary-bg-color);
+}
+
+.item .obrazek img {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.item .item-popis {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.item .item-popis .item-nazev {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--text-color2)
+}
+
+.cena-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--text-color2);
+}
+
+.cena-container .item-cena {
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
+.item-container .item .cena-container .kosik-icon button {
+    all: unset;
+    background-color: var(--text-color);
+    border-radius: 0.25rem;
+    padding: 0.45rem;
+    color: var(--text-color2);
+}
+
+.item-container .item .cena-container .kosik-icon button:hover {
+    cursor: pointer;
+    background-color: var(--secondary-bg-color);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid var(--text-color2);
+}
+
+.item-container .item .cena-container .kosik-icon button i {
+    margin-right: 0.5rem;
+}
+
+.product-kosik {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 3rem 2rem 0 2rem;
+    padding: 1rem;
+    background-color: var(--secondary-bg-color);
+    border-radius: 0.3rem;
+}
+
+.product-kosik .obrazek-kosik img {
+    width: 100px;
+    height: 100px;
+}
+
+.product-kosik .jmeno-product {
+    margin: 0rem 1rem;
+    width: 45%;
+    color: var(--text-color2);
+}
+
+.product-kosik .product-pocet {
+    display: flex;
+    color: var(--text-color2);
+}
+
+.product-kosik .product-pocet a {
+    text-decoration: none;
+    background-color: var(--main-bg-color);
+    color: var(--text-color2);
+    border-radius: 50%;
+    margin: 0rem 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-kosik .product-pocet a:hover {
+    background-color: var(--text-color);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.product-kosik .cena-ks {
+    width: 10%;
+    margin: 0 1rem 0 4rem;
+    color: var(--text-color2);
+}
+
+.product-kosik .cena-vice-kusu {
+    color: var(--text-color2);
+}
+
+.objednavka-celkova-cena {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 2rem 2rem;
+}
+
+.objednavka-celkova-cena h3 {
+    margin-right: 2rem;
+    color: var(--text-color2);
+}
+
+.objednavka-info {
+    display: flex;
+    margin: 2rem 3rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.objednavka-info .objednavka-button a {
+    text-decoration: none;
+    padding: 1rem;
+    color: var(--text-color2);
+    border: 1px solid var(--secondary-bg-color);
+    border-radius: 0.3rem;
+}
+
+.objednavka-info .objednavka-button a:hover {
+    background-color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.adminPanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.adminPanel .adminHead {
+    margin: 3rem 0 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 90%;
+    color:var(--text-color2)
+}
+
+
+.adminPanel .adminHead .button {
+    margin-left: 7rem;
+}
+
+.adminPanel .user-panel {
+    border-collapse: collapse;
+    border-style: hidden;
+    margin: 4rem 0;
+    min-width: 400px;
+}
+
+.adminPanel .user-panel tr {
+    background-color: var(--secondary-bg-color);
+}
+
+.adminPanel .user-panel tr:not(:last-child) {
+    border-bottom: 1px solid var(--text-color2);
+}
+
+.adminPanel .user-panel th {
+    border-right: 1px solid var(--text-color2);
+    color: var(--text-color2);
+}
+
+.adminPanel .user-panel td {
+    color: var(--text-color2);
+}
+
+.adminPanel .user-panel tr th, .adminPanel .user-panel tr td {
+    text-align: left;
+    padding: 1.5rem 3rem;
+}
+
+.objednavka-hotova {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10rem 0 5rem 0;
+    color: var(--text-color2);
+}
+
+.button {
+    text-decoration: none;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    border: none;
+    outline: none;
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color2);
+}
+
+.button:hover {
+    background-color: var(--text-color);
+    transition: 0.3s all ease-in-out;
+    cursor: pointer;
+}
+
+.button-a {
+    margin-top: 0 !important;  
+}
+
+.button-a a {
+    color: var(--text-color2);
+    text-decoration: none;
+}
+
+button.button2 {
+    all: unset;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    background-color: var(--main-bg-color);
+}
+
+button.button2:hover {
+    cursor: pointer;
+    background-color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.user-form input {
+    all: unset;
+    background-color: var(--main-bg-color);
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    color: var(--text-color2);
+    margin-right: 0.3rem;
+}
+
+.admin {
+    display: grid;
+    place-items: center;
+}
+
+.user-panel {
+    border-collapse: collapse;
+    margin-top: 5rem;
+    color: var(--text-color2);
+    background-color: var(--secondary-bg-color);
+}
+
+.user-panel thead {
+    border-bottom: 1px solid var(--text-color2);
+}
+
+.user-panel tr:not(:last-child) {
+    border-bottom: 1px solid var(--text-color2);
+}
+
+.user-panel th, .user-panel td {
+    padding: 2rem;
+    text-align: left;
+}
+
+.user-panel a i {
+    color: var(--text-color2);
+}
+
+footer {
+    position: sticky;
+    top: 100%;
+}
+
+.footer {
+    background-color: var(--secondary-bg-color);
+    padding: 2rem;
+    display: grid;
+    place-items: center;
+    color: var(--text-color2);
+}
+
+.error-container {
+    display: grid;
+    place-items: center;
+    margin: 1rem 0;
+}
+
+.error-container .error {
+    padding: 1rem;
+    background-color: var(--secondary-bg-color);
+    border-radius: 0.3rem;
+    color: var(--text-color2);
+}
+
+.error-container .error li {
+    list-style-type: none;
+}
