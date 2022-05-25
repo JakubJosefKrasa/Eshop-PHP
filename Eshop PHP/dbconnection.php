@@ -1,10 +1,10 @@
 <?php
     function connectDb()
     {
-        $servername = "dbs.spskladno.cz";
-        $username = "student23";
-        $password = "spsnet";
-        $dbname = "vyuka23";
+        $servername = "";
+        $username = "";
+        $password = "";
+        $dbname = "";
     
         $conn = new mysqli($servername, $username, $password, $dbname);
     
